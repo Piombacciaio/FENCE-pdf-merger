@@ -1,12 +1,11 @@
 try:
-  from colorama import Fore
   from PyPDF2 import PdfMerger
   from tkinter.filedialog import askdirectory
   from tkinter.messagebox import showerror
   import os, PySimpleGUI as PSG, shutil, webbrowser
 except ImportError:
   import sys, os, subprocess
-  for package in ["colorama", "tabulate", "PyPDF2", "PySimpleGUI"]:
+  for package in ["tabulate", "PyPDF2", "PySimpleGUI"]:
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
   os.system("cls")
   os.execv(sys.executable, ["python"] + sys.argv)
