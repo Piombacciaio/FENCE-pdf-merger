@@ -22,7 +22,8 @@ def main():
   path_original = src_path.rsplit("/", maxsplit=1)[0]
   path_complete = path_original + "/Exports"
 
-  output.update(f"Merging {category}\n", text_color_for_value="green", append=True)
+  output.update(f"{f" Merging {category} " :+^70}\n", text_color_for_value="green", append=True)
+
   for pdf in __filenames__:
     file = src_path + "/" + pdf 
     try: merger.append(file, import_outline=False)
@@ -36,7 +37,7 @@ def main():
   
   if not os.path.exists(path_complete): os.mkdir(path_complete)
   shutil.move(src_path, path_complete)
-  output.update(f"Merging completed\n", text_color_for_value="green", append=True)
+  output.update(f"{" Merging Complete " :+^70}\n\n", text_color_for_value="green", append=True)
 
 
 if __name__ == '__main__': 
